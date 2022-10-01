@@ -1,0 +1,49 @@
+.btnView{
+    -fx-font-family: serif;
+    -fx-font-size: 13px;
+    -fx-background-radius: 6;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-radius: 6;
+    -fx-cursor: hand;
+}
+
+.btnView:hover{
+    -fx-font-size: 14px;
+    -fx-background-color: lightblue;
+}
+
+
+.anchorPane{
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: white;
+}
+
+.btnCus{
+    -fx-border-color: Darkblue;
+    -fx-border-radius: 8;
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 8;
+    -fx-font-family: "Sitka Subheading";
+    -fx-font-size: 14;
+    -fx-cursor: Hand;
+}
+
+.btnCus:hover{
+    -fx-font-size: 15;
+    -fx-background-color: lightblue;
+}
+
+.CusAnchorPane{
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: white;
+}
+
+.lblOrderDetails{
+    -fx-border-color: DarkBlue;
+    -fx-border-radius: 5px;
+    -fx-font-family: "Sitka Text";
+    -fx-font-size: 13;
+}

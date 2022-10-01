@@ -1,0 +1,39 @@
+.anchorPane2{
+    -fx-background-radius: 20px;
+    -fx-border-color: white;
+    -fx-border-radius: 20px;
+}
+
+.TitleLabel{
+    -fx-font-family: "Sitka Subheading";
+    -fx-font-size: 28px;
+    -fx-text-fill: #2044ba;
+}
+
+.WelcomeLabel{
+    -fx-font-family: "Sitka Text";
+    -fx-font-size: 20;
+    -fx-text-fill: #2044ba;
+}
+
+.LogInLabel{
+    -fx-font-family: "Sitka Text";
+    -fx-font-size: 12;
+    -fx-text-fill: #2044ba;
+}
+
+.logInBtn{
+    -fx-font-family: "Book Antiqua";
+    -fx-background-color: #ffffff;
+    -fx-border-color: #040466;
+    -fx-font-size: 14;
+    -fx-border-radius: 12;
+    -fx-background-radius:12;
+    -fx-cursor: hand;
+}
+
+.logInBtn:hover{
+    -fx-font-size: 15;
+    -fx-background-color: #5399d4;
+
+}

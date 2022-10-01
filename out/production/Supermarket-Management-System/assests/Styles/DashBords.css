@@ -1,0 +1,11 @@
+.lblSubTit{
+    -fx-font-family: "Franklin Gothic Medium";
+    -fx-font-size: 23px;
+    -fx-text-fill: #fdfdfd;
+}
+
+.AnchorPaneDashBord{
+    -fx-border-radius: 14px;
+    -fx-border-color: white;
+    -fx-background-radius: 14px;
+}
