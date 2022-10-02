@@ -10,46 +10,48 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Item_Context" prefHeight="460.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddItemFormController">
-   <children>
-      <FontAwesomeIcon fx:id="btnBack" iconName="ARROW_LEFT" layoutX="10.0" layoutY="36.0" onMouseClicked="#Back_To_Menu" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" size="2em" />
-      <Label fx:id="lblBack" layoutX="44.0" layoutY="20.0" stylesheets="@Assets/Styles/DashBords.css">
-         <font>
-            <Font name="MS Outlook" size="12.0" />
-         </font></Label>
-      <BorderPane layoutX="126.0" layoutY="10.0" prefHeight="35.0" prefWidth="447.0" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="126.0">
-         <center>
-            <Label prefHeight="40.0" prefWidth="242.0" text="item details" textFill="#183fc9" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Copperplate Gothic Bold" size="36.0" />
-               </font>
-            </Label>
-         </center>
-      </BorderPane>
-      <AnchorPane layoutX="5.0" layoutY="63.0" prefHeight="161.0" prefWidth="690.0" style="-fx-background-color: #3498db;" styleClass="anchorPane2" stylesheets="@Assets/Styles/LogInPage.css" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="63.0">
-         <children>
-            <JFXTextField fx:id="txtUPrice" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="17.0" layoutY="123.0" promptText="Unit Price" unFocusColor="WHITE" />
-            <JFXTextField fx:id="txtQtyOnHand" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="510.0" layoutY="76.0" promptText="Qty On Hand" unFocusColor="WHITE" />
-            <JFXTextField fx:id="txtPSize" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="345.0" layoutY="76.0" promptText="Pack Size" unFocusColor="WHITE" />
-            <JFXTextField fx:id="txtIDescription" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="179.0" layoutY="76.0" promptText="Description" unFocusColor="WHITE" />
-            <JFXTextField fx:id="txtICode" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="18.0" layoutY="76.0" promptText="Code" unFocusColor="WHITE" />
-            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="328.0" layoutY="120.0" onMouseClicked="#Add_Item_to_Database" prefHeight="30.0" prefWidth="212.0" styleClass="logInBtn" stylesheets="@Assets/Styles/LogInPage.css" text="ADD" />
-            <JFXTextField fx:id="txtItemCodeSearch" alignment="CENTER" focusColor="#0039e4" labelFloat="true" layoutX="18.0" layoutY="14.0" promptText="Search Item" unFocusColor="#1100ff" />
-            <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="163.0" layoutY="14.0" onMouseClicked="#Search_Item" styleClass="logInBtn" stylesheets="@Assets/Styles/LogInPage.css" text="Search">
-               <graphic>
-                  <FontAwesomeIcon iconName="SEARCH" />
-               </graphic>
-            </JFXButton>
-         </children>
-      </AnchorPane>
-      <TableView fx:id="tblItem" layoutX="14.0" layoutY="246.0" prefHeight="200.0" prefWidth="678.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="246.0">
-        <columns>
-          <TableColumn fx:id="colICode" prefWidth="92.0" text="Item Code" />
-          <TableColumn fx:id="colIDescription" prefWidth="204.0" text="Description" />
-            <TableColumn fx:id="colISize" prefWidth="137.0" text="Pack Size" />
-            <TableColumn fx:id="colIQtyHand" prefWidth="139.0" text="Qty On Hand" />
-            <TableColumn fx:id="colIUnitP" prefWidth="117.0" text="Unit Price" />
-        </columns>
-      </TableView>
-   </children>
+<AnchorPane fx:id="Item_Context" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddItemFormController">
+    <children>
+        <FontAwesomeIcon fx:id="btnBack" iconName="ARROW_LEFT" layoutX="10.0" layoutY="36.0" onMouseClicked="#Back_To_Menu" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" size="2em" />
+        <Label fx:id="lblBack" layoutX="44.0" layoutY="20.0" stylesheets="@../Assets/Styles/DashBords.css">
+            <font>
+                <Font name="MS Outlook" size="12.0" />
+            </font></Label>
+        <BorderPane layoutX="126.0" layoutY="10.0" prefHeight="35.0" prefWidth="447.0" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="126.0">
+            <center>
+                <Label prefHeight="40.0" prefWidth="242.0" text="item details" textFill="#183fc9" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Copperplate Gothic Bold" size="36.0" />
+                    </font>
+                </Label>
+            </center>
+        </BorderPane>
+        <AnchorPane layoutX="5.0" layoutY="63.0" prefHeight="161.0" prefWidth="690.0" style="-fx-background-color: #3498db;" styleClass="anchorPane2" stylesheets="@/Assets/Styles/LogInPage.css" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="63.0">
+            <children>
+                <JFXTextField fx:id="txtUPrice" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="17.0" layoutY="123.0" promptText="Unit Price" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtQtyOnHand" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="510.0" layoutY="76.0" promptText="Qty On Hand" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtPSize" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="345.0" layoutY="76.0" promptText="Pack Size" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtIDescription" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="179.0" layoutY="76.0" promptText="Description" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtICode" alignment="CENTER" focusColor="#1b0ad7" labelFloat="true" layoutX="18.0" layoutY="76.0" promptText="Code" unFocusColor="WHITE" />
+                <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="328.0" layoutY="120.0" onMouseClicked="#Add_Item_to_Database" prefHeight="30.0" prefWidth="212.0" styleClass="logInBtn" stylesheets="@/Assets/Styles/LogInPage.css" text="ADD" />
+                <JFXTextField fx:id="txtItemCodeSearch" alignment="CENTER" focusColor="#0039e4" labelFloat="true" layoutX="18.0" layoutY="14.0" promptText="Search Item" unFocusColor="#1100ff" />
+                <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="163.0" layoutY="14.0" onMouseClicked="#Search_Item" styleClass="logInBtn" stylesheets="@/Assets/Styles/LogInPage.css" text="Search">
+                    <graphic>
+                        <FontAwesomeIcon iconName="SEARCH" />
+                    </graphic>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="tblItem" layoutX="14.0" layoutY="246.0" prefHeight="200.0" prefWidth="678.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="246.0">
+
+            <columns>
+                <TableColumn fx:id="colICode" prefWidth="92.0" text="Item Code" />
+                <TableColumn fx:id="colIDescription" prefWidth="204.0" text="Description" />
+                <TableColumn fx:id="colISize" prefWidth="137.0" text="Pack Size" />
+                <TableColumn fx:id="colIQtyHand" prefWidth="139.0" text="Qty On Hand" />
+                <TableColumn fx:id="colIUnitP" prefWidth="117.0" text="Unit Price" />
+            </columns>
+        </TableView>
+    </children>
+
 </AnchorPane>
