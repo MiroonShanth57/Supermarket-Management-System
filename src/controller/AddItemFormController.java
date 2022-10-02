@@ -1,9 +1,13 @@
 package controller;
 
+import bo.BoFactory;
+import bo.Customer.ItemBO;
+import bo.Customer.OrderBO;
 import com.jfoenix.controls.JFXTextField;
 import com.sun.scenario.effect.Color4f;
 import com.sun.scenario.effect.DropShadow;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import dto.ItemDTO;
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,6 +21,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 
 public class AddItemFormController {
     public FontAwesomeIcon btnBack;
@@ -34,6 +39,9 @@ public class AddItemFormController {
     public TableColumn colIQtyHand;
     public TableColumn colIUnitP;
     public AnchorPane Item_Context;
+
+    private final ItemBO itemBO = (ItemBO) BoFactory.getBoFactory().getBO(BoFactory.BoTypes.ITEM);
+    private final OrderBO orderBO = (OrderBO) BoFactory.getBoFactory().getBO(BoFactory.BoTypes.ORDER);
 
     public void Back_To_Menu(MouseEvent mouseEvent) throws IOException {
         URL resource = getClass().getResource("../view/DashBordAdminForm.fxml");
@@ -78,23 +86,24 @@ public class AddItemFormController {
         }
     }
 
-    public void Add_Item_to_Database(MouseEvent mouseEvent) {
-//        Item item1=new Item(
-//                txtICode.getText(),
-//                txtIDescription.getText(),
-//                txtPSize.getText(),
-//                Integer.parseInt(txtQtyOnHand.getText()),
-//                Double.parseDouble(txtUPrice.getText())
-//        );
-//
-//        if(saveItemDatabases(item1)){
-//            load_the_data_for_table_method();
-//            new Alert(Alert.AlertType.CONFIRMATION,"Successfully Added").show();
-//        }else{
-//            new Alert(Alert.AlertType.ERROR,"Try Again").show();
-//        }
+    public void Add_Item_to_Database(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        ItemDTO itemDTO = new ItemDTO(
+                txtICode.getText(), txtIDescription.getText(),
+                txtPSize.getText(), Double.parseDouble(txtUPrice.getText()),
+                Integer.parseInt(txtQtyOnHand.getText())
+        );
+        if (itemBO.ItemSaved(itemDTO)) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Item Saved").show();
+        }
     }
 
-    public void Search_Item(MouseEvent mouseEvent) {
+    public void Search_Item(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        ItemDTO itemDTO= itemBO.search(txtItemCodeSearch.getText());
+        if (itemDTO != null) {
+            txtIDescription.setText(itemDTO.getDescription());
+            txtPSize.setText(itemDTO.getPackSize());
+            txtUPrice.setText(String.valueOf(itemDTO.getUnitPrice()));
+            txtQtyOnHand.setText(String.valueOf(itemDTO.getQtyOnHand()));
+        } else new Alert(Alert.AlertType.WARNING, "Empty Set").show();
     }
 }

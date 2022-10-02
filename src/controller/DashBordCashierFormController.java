@@ -28,7 +28,7 @@ public class DashBordCashierFormController {
 
     public void Open_POrder_Form(MouseEvent mouseEvent) throws IOException {
         Stage window=(Stage)Cashier_Context.getScene().getWindow();
-        window.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/PlaceOrderForm.fxml"))));
+        window.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/PlaceOrderForm.fxml"))));
         window.setResizable(false);
         window.setTitle("Order Form");
     }

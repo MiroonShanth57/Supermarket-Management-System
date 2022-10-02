@@ -19,7 +19,7 @@
         </Label>
         <AnchorPane layoutX="15.0" layoutY="59.0" prefHeight="377.0" prefWidth="671.0" style="-fx-background-color: #3498db;" styleClass="AnchorPaneDashBord" stylesheets="@../Assets/Styles/DashBords.css">
             <children>
-                <TableView blendMode="MULTIPLY" layoutX="41.0" layoutY="24.0" prefHeight="323.0" prefWidth="443.0">
+                <TableView fx:id="tblMangeOrder" blendMode="MULTIPLY" layoutX="41.0" layoutY="24.0" prefHeight="323.0" prefWidth="443.0">
                     <columns>
                         <TableColumn prefWidth="47.0" text="Code" />
                         <TableColumn prefWidth="98.0" text="Description" />
